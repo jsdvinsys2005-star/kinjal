@@ -1,0 +1,7 @@
+x = 36e6
+y = 12E4
+z = -87.7e100
+
+print(type(A))
+print(type(B))
+print(type(C))
