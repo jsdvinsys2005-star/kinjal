@@ -1,0 +1,68 @@
+// Employee.java
+
+class Employee {
+    // Encapsulation: private variables
+    private int id;
+    private String name;
+    private double salary;
+
+    // Constructor
+    public Employee(int id, String name, double salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    // Getter and Setter methods (Encapsulation)
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void displayDetails() {
+        System.out.println(id + "\t" + name + "\t" + salary);
+    }
+}
+
+// Polymorphism: Child class
+class Manager extends Employee {
+
+    private String department;
+
+    public Manager(int id, String name, double salary, String department) {
+        super(id, name, salary);
+        this.department = department;
+    }
+
+    // Method overriding (Runtime Polymorphism)
+    @Override
+    public void displayDetails() {
+        System.out.println(getId() + "\t" + getName() + "\t" + getSalary() + "\t" + department);
+    }
+}
+
+// Main class
+public class Main {
+    public static void main(String[] args) {
+
+        System.out.println("Employee Details Table");
+        System.out.println("-------------------------------------");
+        System.out.println("ID\tName\tSalary\tDepartment");
+
+        // Polymorphism
+        Employee e1 = new Employee(101, "shital", 25000);
+        Employee e2 = new Manager(102, "dhruvi", 50000, "IT");
+        Employee e3 = new Manager(103, "jyoti", 60000, "HR");
+
+        e1.displayDetails();
+        e2.displayDetails();
+        e3.displayDetails();
+    }
+}
